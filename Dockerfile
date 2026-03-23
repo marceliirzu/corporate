@@ -13,6 +13,4 @@ COPY . .
 RUN npx prisma generate
 RUN npm run build
 
-ENV HOSTNAME=0.0.0.0
-
-CMD ["npm", "run", "start"]
+CMD ["npx", "next", "start", "-H", "0.0.0.0"]
