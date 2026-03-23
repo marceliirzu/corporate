@@ -23,6 +23,8 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV CLERK_SECRET_KEY=sk_test_gzVgHF3xj5A2VXzvlaxVqtkhrAtgv3mWIewM61ZGap
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Z2VuZXJvdXMtZHJha2UtNzIuY2xlcmsuYWNjb3VudHMuZGV2JA
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
